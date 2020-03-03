@@ -1,0 +1,15 @@
+---
+- hosts: all
+  gather_facts: true
+
+- hosts: GogsVM
+  gather_facts: true
+  vars_files:
+    - /vagrant/ansible/vars/gogs-on-ubuntu.yml
+  become: yes
+  roles:
+    - geerlingguy.firewall
+    - geerlingguy.git
+    - geerlingguy.mysql   #>> Failing
+    #- geerlingguy.ntp     >> Failing
+    - geerlingguy.gogs

@@ -1,0 +1,24 @@
+version: '3'
+services:
+  drone-server:
+    container_name: drone-server
+    image: drone/drone:1
+    volumes:
+      - db-data:/var/lib/drone/
+    restart: always
+    ports:
+        - "80:80"
+        - "443:443"
+    environment:
+      # - DRONE_OPEN=false
+      - DRONE_SERVER_HOST=my-drone-subdomain.webrelay.io # tunnel hostname
+      - DRONE_GOGS_SERVER=http://172.20.133.25
+      - DRONE_ADMIN=gogsuser
+      - DRONE_SERVER_PROTO=http # tunnel adds https on top
+      - DRONE_RPC_SECRET="testRPCSecret"
+      - DRONE_SERVER_HOST=127.0.0.1
+      - DRONE_AGENTS_ENABLED=true
+      #- DRONE_USER_CREATE=username:admin,admin:true
+
+volumes:
+  db-data:

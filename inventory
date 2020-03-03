@@ -1,0 +1,6 @@
+Controller ansible_connection=local
+gns3-testing-server      ansible_host=172.20.133.50 ansible_ssh_private_key_file=/vagrant/.vagrant/machines/gns3-testing-server/virtualbox/private_key
+GogsVM      ansible_host=172.20.133.25 ansible_ssh_private_key_file=/vagrant/.vagrant/machines/gogs/virtualbox/private_key
+
+[nodes]
+gns3-testing-server
