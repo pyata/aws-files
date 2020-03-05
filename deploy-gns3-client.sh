@@ -4,7 +4,8 @@
 export DEBIAN_FRONTEND=noninteractive
 add-apt-repository ppa:gns3/unstable -y
 apt update && apt-get upgrade -yqq
-apt install gns3-gui firefox gdm3 gnome-terminal nautilus xtightvncviewer ssh -yqq
+#apt install gns3-gui firefox gdm3 gnome-terminal nautilus xtightvncviewer ssh -yqq
+apt install gns3-gui firefox gdm3 gnome-terminal nautilus ssh lxde xrdp -yqq
 systemctl set-default runlevel5.target
 
 ### Download config files
