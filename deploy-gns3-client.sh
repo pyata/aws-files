@@ -20,8 +20,8 @@ fi
 
 GNS3_CONFDIR="/home/ubuntu/.config/GNS3/${GNS3_SHORTVER}"
 mkdir -p $GNS3_CONFDIR
-sudo cp /home/ubuntu/aws-files/gns3_gui.conf $GNS3_CONFDIR/gns3_gui.conf
-sudo cp /home/ubuntu/aws-files/gns3_server.conf $GNS3_CONFDIR/gns3_server.conf
+sudo cp /aws-files/gns3_gui.conf $GNS3_CONFDIR/gns3_gui.conf
+sudo cp /aws-files/gns3_server.conf $GNS3_CONFDIR/gns3_server.conf
 
 # Adding GNS3 version to the GUI config file
 sed -i "s/\"version\":/\"version\": \"${GNS3_VER}\"/g" $GNS3_CONFDIR/gns3_gui.conf
