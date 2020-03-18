@@ -14,3 +14,11 @@
 
   roles:
     - ios_ntp
+
+- name: Configure Device Hostnames
+  hosts: routers
+  connection: local
+  gather_facts: false
+
+  roles:
+    - ios_hostname

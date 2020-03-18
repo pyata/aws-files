@@ -1,0 +1,5 @@
+--- # Configure Hostnames
+ - name: Configure Device Hostname
+   ios_config:
+     lines:
+       - hostname {{ ios_hostname }}
