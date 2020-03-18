@@ -5,8 +5,8 @@ steps:
 - name: apply ansible playbook
   image: plugins/ansible:1
   settings:
-    playbook: /etc/ansible/net_init_deploy.yml
-    inventory: /etc/ansible/inventory
+    playbook: /aws-files/ansible/net_init_deploy.yml
+    inventory: /aws-files/ansible/inventory
   when:
     event:
     - push
