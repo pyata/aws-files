@@ -1,0 +1,8 @@
+--- # Enable HTTP Server on all Routers
+ - name: Enable HTTP Server
+   ios_config:
+     provider:
+       host: "{{inventory_hostname}}"
+       timeout: 15
+     lines:
+       - ip http server
