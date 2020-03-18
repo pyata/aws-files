@@ -1,8 +1,6 @@
 --- # Configure NTP Servers
  - name: Configure NTP Servers
    ios_config:
-     provider:
-       host: "{{inventory_hostname}}"
-       timeout: 15
      lines:
-       - ntp server 
+       - ntp server "{{ ntp.server1 }}"
+       - ntp server "{{ ntp.server2 }}"

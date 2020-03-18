@@ -2,7 +2,7 @@
  - name: Enable HTTP Server
    ios_config:
      # provider:
-     #   host: "{{inventory_hostname}}"  #No entender
+     #   host: "{{inventory_hostname}}"  # If you are using IOS it is not going to work
      #   timeout: 15
      lines:
        - ip http server

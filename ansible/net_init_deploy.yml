@@ -7,12 +7,10 @@
   roles:
     - ios_http_server
 
+- name: Configure NTP Servers on all Routers
+  hosts: routers
+  connection: local
+  gather_facts: false
 
-
-# - name: Configure Syslog on all Routers
-#   hosts: routers
-#   connection: local
-#   gather_facts: false
-#
-#   roles:
-#     - iosxe_mdp
+  roles:
+    - ios_ntp
