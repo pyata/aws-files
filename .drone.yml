@@ -1,0 +1,23 @@
+kind: pipeline
+name: default
+
+steps:
+- name: check ansible syntax
+  image: plugins/ansible:1
+  settings:
+    playbook: /etc/ansible/net_init_deploy.yml
+    inventory: /etc/ansible/inventory
+    syntax_check: true
+  when:
+    event:
+    - pull_request
+
+- name: apply ansible playbook
+  image: plugins/ansible:1
+  settings:
+    playbook: /etc/ansible/net_init_deploy.yml
+    inventory: /etc/ansible/inventory
+  when:
+    event:
+    - push
+    - tag
