@@ -11,3 +11,6 @@ steps:
 - name: greeting
   commands:
   - echo hello world
+  when:
+    event:
+    - push
