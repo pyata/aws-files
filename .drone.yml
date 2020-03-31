@@ -1,13 +1,13 @@
+---
 kind: pipeline
+type: exec
 name: default
 
+platform:
+  os: linux
+  arch: amd64
+
 steps:
-- name: apply ansible playbook
-  image: plugins/ansible:1
-  settings:
-    playbook: /aws-files/ansible/net_init_deploy.yml
-    inventory: /aws-files/ansible/inventory
-  when:
-    event:
-    - push
-    - tag
+- name: greeting
+  commands:
+  - echo hello world
